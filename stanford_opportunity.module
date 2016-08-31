@@ -5,3 +5,22 @@
  */
 
 include_once 'stanford_opportunity.features.inc';
+
+
+/**
+ * Implements hook_views_pre_render
+ */
+
+function stanford_opportunity_views_pre_render(&$view) {
+
+  // Only pull in the css if it the isotopes views are in use.
+  $valid = array(
+    'stanford_opportunity_isotope_filter',
+    'stanford_opportunity_isotope_grid',
+  );
+
+  // Add the css for the isotopes views
+  if (in_array($view->name, $valid)) {
+    drupal_add_css(drupal_get_path("module", "stanford_opportunities") . "/css/stanford_opportunities_isotope_views.css");
+  }
+}
