@@ -1,20 +1,10 @@
-# [Stanford Opportunity](https://github.com/SU-SWS/stanford_opportunity)
+# [Stanford Opportunity Isotope Views](https://github.com/SU-SWS/stanford_opportunity_isotope_views)
 ##### Version: 7.x-1.x
 
 Maintainers: [cjwest](https://github.com/cjwest), [boznik](https://github.com/boznik)
 [Changelog.txt](CHANGELOG.txt)
 
-The Stanford Opportunity feature supports content for opportunities feed from Stanford's Off-Campus Learning Opportunities: https://solo.stanford.edu/.
-
-
-Sub Modules
----
-
-**[Stanford Opportunity Admimistration](https://github.com/SU-SWS/stanford_opportunity_administration)**
-This module provides the Stanford Opportunity manage content view.
-
-**[Stanford Opportunity Isotope Views](https://github.com/SU-SWS/stanford_opportunity_isotope_views)**
-This module provides the Stanford Opportunity isotope views.
+The Stanford Opportunity Isotope Views feature provides views that display Opportunities using Isotope layout.
 
 Installation
 ---
