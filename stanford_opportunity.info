@@ -77,5 +77,4 @@ features[variable][] = menu_parent_stanford_opportunity
 features[variable][] = node_options_stanford_opportunity
 features[variable][] = node_preview_stanford_opportunity
 features[variable][] = node_submitted_stanford_opportunity
-project path = sites/all/modules/stanford
 project status url = https://github.com/SU-SWS/stanford_opportunity
