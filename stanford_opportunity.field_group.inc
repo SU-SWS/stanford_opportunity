@@ -23,8 +23,8 @@ function stanford_opportunity_field_group_info() {
     'label' => 'Contact',
     'weight' => '16',
     'children' => array(
-      0 => 'field_s_opp_contact_name',
-      1 => 'field_s_opp_contact_email',
+      0 => 'field_s_opp_contact_email',
+      1 => 'field_s_opp_contact_name',
       2 => 'field_s_opp_contact_phone',
     ),
     'format_type' => 'fieldset',
@@ -53,12 +53,12 @@ function stanford_opportunity_field_group_info() {
     'label' => 'Dates',
     'weight' => '2',
     'children' => array(
-      0 => 'field_s_opp_submissions_open',
+      0 => 'field_s_opp_acceptance_deadline',
       1 => 'field_s_opp_application_deadline',
       2 => 'field_s_opp_approx_offer_date',
-      3 => 'field_s_opp_acceptance_deadline',
+      3 => 'field_s_opp_duration',
       4 => 'field_s_opp_pre_travel_deadline',
-      5 => 'field_s_opp_duration',
+      5 => 'field_s_opp_submissions_open',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
