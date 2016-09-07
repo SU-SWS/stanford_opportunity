@@ -19,16 +19,16 @@ function stanford_opportunity_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '22',
+          'weight' => '23',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '20',
+          'weight' => '21',
         ),
         'redirect' => array(
-          'weight' => '21',
+          'weight' => '22',
         ),
       ),
       'display' => array(),

@@ -21,7 +21,7 @@ function stanford_opportunity_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '16',
+    'weight' => '17',
     'children' => array(
       0 => 'field_s_opp_contact_email',
       1 => 'field_s_opp_contact_name',

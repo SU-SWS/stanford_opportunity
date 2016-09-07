@@ -55,6 +55,29 @@ function stanford_opportunity_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'stanford_opp_major' => array(
+      'name' => 'Opportunity Major',
+      'machine_name' => 'stanford_opp_major',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'stanford_opp_open_to' => array(
       'name' => 'Opportunity Open To',
       'machine_name' => 'stanford_opp_open_to',
