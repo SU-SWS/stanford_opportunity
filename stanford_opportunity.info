@@ -6,6 +6,7 @@ version = 7.x-1.0-dev
 project = stanford_opportunity
 dependencies[] = ctools
 dependencies[] = date
+dependencies[] = default_image_ft
 dependencies[] = email
 dependencies[] = features
 dependencies[] = field_group
