@@ -192,7 +192,7 @@ function stanford_opportunity_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 20,
+      'weight' => 19,
     ),
   );
 
@@ -307,7 +307,7 @@ function stanford_opportunity_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -785,7 +785,7 @@ function stanford_opportunity_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -825,16 +825,16 @@ function stanford_opportunity_field_default_field_instances() {
           ),
         ),
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
+      'type' => 'text_textarea',
       'weight' => 9,
     ),
   );
@@ -917,7 +917,7 @@ function stanford_opportunity_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 29,
+        'weight' => 40,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1000,6 +1000,7 @@ function stanford_opportunity_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'default_image' => 0,
       'default_image_ft_source_var' => 'stanford_opportunity_image',
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -1174,7 +1175,7 @@ function stanford_opportunity_field_default_field_instances() {
           ),
         ),
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
