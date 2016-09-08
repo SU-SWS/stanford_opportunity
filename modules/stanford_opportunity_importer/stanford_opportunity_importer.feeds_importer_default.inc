@@ -33,6 +33,7 @@ function stanford_opportunity_importer_feeds_importer_default() {
       'config' => array(
         'sources' => array(
           'xpathparser:33' => 'ID',
+          'xpathparser:35' => 'ID',
           'xpathparser:0' => 'TITLE',
           'xpathparser:2' => 'SUBMISSIONS_OPEN',
           'xpathparser:3' => 'APPLICATION_DEADLINE',
@@ -63,6 +64,7 @@ function stanford_opportunity_importer_feeds_importer_default() {
         ),
         'rawXML' => array(
           'xpathparser:33' => 0,
+          'xpathparser:35' => 0,
           'xpathparser:0' => 0,
           'xpathparser:2' => 0,
           'xpathparser:3' => 0,
@@ -97,6 +99,7 @@ function stanford_opportunity_importer_feeds_importer_default() {
           'debug' => array(
             'context' => 0,
             'xpathparser:33' => 0,
+            'xpathparser:35' => 0,
             'xpathparser:0' => 0,
             'xpathparser:2' => 0,
             'xpathparser:3' => 0,
@@ -140,163 +143,171 @@ function stanford_opportunity_importer_feeds_importer_default() {
             'source' => 'xpathparser:33',
             'target' => 'guid',
             'unique' => 0,
+            'language' => 'und',
           ),
           1 => array(
+            'source' => 'xpathparser:35',
+            'target' => 'field_s_opp_id',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          2 => array(
             'source' => 'xpathparser:0',
             'target' => 'title',
             'unique' => 1,
+            'language' => 'und',
           ),
-          2 => array(
+          3 => array(
             'source' => 'xpathparser:2',
             'target' => 'field_s_opp_submissions_open:start',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          3 => array(
+          4 => array(
             'source' => 'xpathparser:3',
             'target' => 'field_s_opp_application_deadline:start',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          4 => array(
+          5 => array(
             'source' => 'xpathparser:4',
             'target' => 'field_s_opp_approx_offer_date:start',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          5 => array(
+          6 => array(
             'source' => 'xpathparser:5',
             'target' => 'field_s_opp_acceptance_deadline:start',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          6 => array(
+          7 => array(
             'source' => 'xpathparser:6',
             'target' => 'field_s_opp_pre_travel_deadline:start',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          7 => array(
+          8 => array(
             'source' => 'xpathparser:7',
             'target' => 'field_s_opp_duration:start',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          8 => array(
+          9 => array(
             'source' => 'xpathparser:8',
             'target' => 'field_s_opp_duration:end',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          9 => array(
+          10 => array(
             'source' => 'xpathparser:9',
             'target' => 'field_s_opp_sponsor',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          11 => array(
             'source' => 'xpathparser:10',
             'target' => 'field_s_opp_intro',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          11 => array(
+          12 => array(
             'source' => 'xpathparser:12',
             'target' => 'field_s_opp_bullet_points',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          12 => array(
+          13 => array(
             'source' => 'xpathparser:13',
             'target' => 'body',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          13 => array(
+          14 => array(
             'source' => 'xpathparser:14',
             'target' => 'field_s_opp_image:uri',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          14 => array(
+          15 => array(
             'source' => 'xpathparser:34',
             'target' => 'field_s_opp_eligibility',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          15 => array(
+          16 => array(
             'source' => 'xpathparser:16',
             'target' => 'field_s_opp_type',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          16 => array(
+          17 => array(
             'source' => 'xpathparser:17',
             'target' => 'field_s_opp_time_of_year',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          17 => array(
+          18 => array(
             'source' => 'xpathparser:18',
             'target' => 'field_s_opp_funding',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          18 => array(
+          19 => array(
             'source' => 'xpathparser:19',
             'target' => 'field_s_opp_credit',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          19 => array(
+          20 => array(
             'source' => 'xpathparser:20',
             'target' => 'field_s_opp_open_to',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          20 => array(
+          21 => array(
             'source' => 'xpathparser:21',
             'target' => 'field_s_opp_location',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          21 => array(
+          22 => array(
             'source' => 'xpathparser:22',
             'target' => 'field_s_opp_city_cities',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          22 => array(
+          23 => array(
             'source' => 'xpathparser:23',
             'target' => 'field_s_opp_contact_name',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          23 => array(
+          24 => array(
             'source' => 'xpathparser:24',
             'target' => 'field_s_opp_contact_email',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          24 => array(
+          25 => array(
             'source' => 'xpathparser:25',
             'target' => 'field_s_opp_contact_phone',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          25 => array(
+          26 => array(
             'source' => 'xpathparser:30',
             'target' => 'field_s_opp_learn_more:url',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          26 => array(
+          27 => array(
             'source' => 'xpathparser:28',
             'target' => 'field_s_opp_additional_resources:url',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          27 => array(
+          28 => array(
             'source' => 'xpathparser:27',
             'target' => 'field_s_opp_application_form:url',
             'unique' => FALSE,

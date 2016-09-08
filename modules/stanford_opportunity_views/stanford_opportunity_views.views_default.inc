@@ -52,22 +52,6 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No opportunities items listed.';
   $handler->display->display_options['empty']['area']['format'] = 'content_editor_text_format';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_s_opp_image']['id'] = 'field_s_opp_image';
-  $handler->display->display_options['fields']['field_s_opp_image']['table'] = 'field_data_field_s_opp_image';
-  $handler->display->display_options['fields']['field_s_opp_image']['field'] = 'field_s_opp_image';
-  $handler->display->display_options['fields']['field_s_opp_image']['label'] = '';
-  $handler->display->display_options['fields']['field_s_opp_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_s_opp_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_s_opp_image']['settings'] = array(
-    'image_style' => '4-col-header',
-    'image_link' => 'content',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -80,36 +64,47 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'normal-link';
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_s_news_date']['id'] = 'field_s_news_date';
-  $handler->display->display_options['fields']['field_s_news_date']['table'] = 'field_data_field_s_news_date';
-  $handler->display->display_options['fields']['field_s_news_date']['field'] = 'field_s_news_date';
-  $handler->display->display_options['fields']['field_s_news_date']['label'] = '';
-  $handler->display->display_options['fields']['field_s_news_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_s_news_date']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_s_news_date']['element_wrapper_class'] = 'descriptor';
-  $handler->display->display_options['fields']['field_s_news_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_s_news_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_s_opp_image']['id'] = 'field_s_opp_image';
+  $handler->display->display_options['fields']['field_s_opp_image']['table'] = 'field_data_field_s_opp_image';
+  $handler->display->display_options['fields']['field_s_opp_image']['field'] = 'field_s_opp_image';
+  $handler->display->display_options['fields']['field_s_opp_image']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_opp_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_s_opp_image']['settings'] = array(
+    'image_style' => '4-col-header',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Duration */
+  $handler->display->display_options['fields']['field_s_opp_duration']['id'] = 'field_s_opp_duration';
+  $handler->display->display_options['fields']['field_s_opp_duration']['table'] = 'field_data_field_s_opp_duration';
+  $handler->display->display_options['fields']['field_s_opp_duration']['field'] = 'field_s_opp_duration';
+  $handler->display->display_options['fields']['field_s_opp_duration']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_duration']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_s_opp_duration']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_s_opp_duration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_opp_duration']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_s_opp_duration']['element_wrapper_class'] = 'descriptor';
+  $handler->display->display_options['fields']['field_s_opp_duration']['settings'] = array(
+    'format_type' => 'stanford_month_date_year',
+    'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '130';
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
+  /* Field: Content: Location */
+  $handler->display->display_options['fields']['field_s_opp_location']['id'] = 'field_s_opp_location';
+  $handler->display->display_options['fields']['field_s_opp_location']['table'] = 'field_data_field_s_opp_location';
+  $handler->display->display_options['fields']['field_s_opp_location']['field'] = 'field_s_opp_location';
+  $handler->display->display_options['fields']['field_s_opp_location']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_location']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_s_opp_location']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_s_opp_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_opp_location']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_s_opp_location']['element_wrapper_class'] = 'descriptor';
+  $handler->display->display_options['fields']['field_s_opp_location']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_s_opp_location']['delta_offset'] = '0';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -120,6 +115,10 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['element_wrapper_class'] = 'edit-link';
   $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   /* Sort criterion: Content: Date (field_s_news_date) */
   $handler->display->display_options['sorts']['field_s_news_date_value']['id'] = 'field_s_news_date_value';
   $handler->display->display_options['sorts']['field_s_news_date_value']['table'] = 'field_data_field_s_news_date';
@@ -270,7 +269,7 @@ function stanford_opportunity_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'grid_3_page');
   $handler->display->display_options['display_comment'] = 'CJW';
-  $handler->display->display_options['path'] = 'opportunities/grid';
+  $handler->display->display_options['path'] = 'opportunities';
   $export['stanford_opportunity_grid'] = $view;
 
   return $export;
