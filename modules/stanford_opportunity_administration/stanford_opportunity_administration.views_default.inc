@@ -131,10 +131,6 @@ function stanford_opportunity_administration_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Feeds item: Owner feed */
-  $handler->display->display_options['relationships']['feed_nid']['id'] = 'feed_nid';
-  $handler->display->display_options['relationships']['feed_nid']['table'] = 'feeds_item';
-  $handler->display->display_options['relationships']['feed_nid']['field'] = 'feed_nid';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
@@ -208,28 +204,11 @@ function stanford_opportunity_administration_views_default_views() {
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Date and Time */
-  $handler->display->display_options['fields']['field_stanford_event_datetime']['id'] = 'field_stanford_event_datetime';
-  $handler->display->display_options['fields']['field_stanford_event_datetime']['table'] = 'field_data_field_stanford_event_datetime';
-  $handler->display->display_options['fields']['field_stanford_event_datetime']['field'] = 'field_stanford_event_datetime';
-  $handler->display->display_options['fields']['field_stanford_event_datetime']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'feed_nid';
-  $handler->display->display_options['fields']['title_1']['label'] = 'Feed Title';
-  /* Field: Feeds log: Importer id */
-  $handler->display->display_options['fields']['id']['id'] = 'id';
-  $handler->display->display_options['fields']['id']['table'] = 'feeds_log';
-  $handler->display->display_options['fields']['id']['field'] = 'id';
-  $handler->display->display_options['fields']['id']['relationship'] = 'feed_nid';
+  /* Field: Feeds item: Owner feed nid */
+  $handler->display->display_options['fields']['feed_nid']['id'] = 'feed_nid';
+  $handler->display->display_options['fields']['feed_nid']['table'] = 'feeds_item';
+  $handler->display->display_options['fields']['feed_nid']['field'] = 'feed_nid';
+  $handler->display->display_options['fields']['feed_nid']['separator'] = '';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -310,26 +289,39 @@ function stanford_opportunity_administration_views_default_views() {
     15 => 0,
     17 => 0,
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['filters']['title_1']['table'] = 'node';
-  $handler->display->display_options['filters']['title_1']['field'] = 'title';
-  $handler->display->display_options['filters']['title_1']['relationship'] = 'feed_nid';
-  $handler->display->display_options['filters']['title_1']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title_1']['group'] = 1;
-  $handler->display->display_options['filters']['title_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title_1']['expose']['operator_id'] = 'title_1_op';
-  $handler->display->display_options['filters']['title_1']['expose']['label'] = 'Owner feed title';
-  $handler->display->display_options['filters']['title_1']['expose']['operator'] = 'title_1_op';
-  $handler->display->display_options['filters']['title_1']['expose']['identifier'] = 'title_1';
-  $handler->display->display_options['filters']['title_1']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Nid';
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     6 => 0,
-    5 => 0,
-    4 => 0,
     3 => 0,
-    7 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  /* Filter criterion: Feeds item: Owner feed nid */
+  $handler->display->display_options['filters']['feed_nid']['id'] = 'feed_nid';
+  $handler->display->display_options['filters']['feed_nid']['table'] = 'feeds_item';
+  $handler->display->display_options['filters']['feed_nid']['field'] = 'feed_nid';
+  $handler->display->display_options['filters']['feed_nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['feed_nid']['expose']['operator_id'] = 'feed_nid_op';
+  $handler->display->display_options['filters']['feed_nid']['expose']['label'] = 'Owner feed nid';
+  $handler->display->display_options['filters']['feed_nid']['expose']['operator'] = 'feed_nid_op';
+  $handler->display->display_options['filters']['feed_nid']['expose']['identifier'] = 'feed_nid';
+  $handler->display->display_options['filters']['feed_nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
   );
 
   /* Display: Page */
