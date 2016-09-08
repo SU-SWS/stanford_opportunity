@@ -44,9 +44,11 @@ function stanford_opportunity_administration_views_default_views() {
     'title' => 'title',
     'status' => 'status',
     'changed' => 'changed',
-    'field_stanford_event_datetime' => 'field_stanford_event_datetime',
-    'title_1' => 'title_1',
-    'id' => 'id',
+    'nothing' => 'nothing',
+    'field_s_opp_id' => 'nothing',
+    'field_s_opp_duration' => 'nothing',
+    'field_s_opp_location' => 'nothing',
+    'feed_nid' => 'feed_nid',
     'nid' => 'nid',
     'edit_node' => 'edit_node',
     'view_node' => 'edit_node',
@@ -87,22 +89,32 @@ function stanford_opportunity_administration_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_stanford_event_datetime' => array(
-      'sortable' => 1,
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_s_opp_id' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'title_1' => array(
-      'sortable' => 1,
+    'field_s_opp_duration' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'id' => array(
-      'sortable' => 1,
+    'field_s_opp_location' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'feed_nid' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -204,6 +216,37 @@ function stanford_opportunity_administration_views_default_views() {
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
+  /* Field: Global: Rewrite fields */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Rewrite fields';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Fields';
+  /* Field: Content: ID */
+  $handler->display->display_options['fields']['field_s_opp_id']['id'] = 'field_s_opp_id';
+  $handler->display->display_options['fields']['field_s_opp_id']['table'] = 'field_data_field_s_opp_id';
+  $handler->display->display_options['fields']['field_s_opp_id']['field'] = 'field_s_opp_id';
+  $handler->display->display_options['fields']['field_s_opp_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_s_opp_id']['alter']['text'] = 'ID: [field_s_opp_id] ';
+  /* Field: Content: Duration */
+  $handler->display->display_options['fields']['field_s_opp_duration']['id'] = 'field_s_opp_duration';
+  $handler->display->display_options['fields']['field_s_opp_duration']['table'] = 'field_data_field_s_opp_duration';
+  $handler->display->display_options['fields']['field_s_opp_duration']['field'] = 'field_s_opp_duration';
+  $handler->display->display_options['fields']['field_s_opp_duration']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_s_opp_duration']['alter']['text'] = ' | Start: [field_s_opp_duration-value]';
+  $handler->display->display_options['fields']['field_s_opp_duration']['settings'] = array(
+    'format_type' => 'stanford_month_date_year',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Location */
+  $handler->display->display_options['fields']['field_s_opp_location']['id'] = 'field_s_opp_location';
+  $handler->display->display_options['fields']['field_s_opp_location']['table'] = 'field_data_field_s_opp_location';
+  $handler->display->display_options['fields']['field_s_opp_location']['field'] = 'field_s_opp_location';
+  $handler->display->display_options['fields']['field_s_opp_location']['delta_offset'] = '0';
   /* Field: Feeds item: Owner feed nid */
   $handler->display->display_options['fields']['feed_nid']['id'] = 'feed_nid';
   $handler->display->display_options['fields']['feed_nid']['table'] = 'feeds_item';
@@ -322,6 +365,29 @@ function stanford_opportunity_administration_views_default_views() {
     3 => 0,
     4 => 0,
     5 => 0,
+  );
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Filter Fields';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'field_s_opp_id' => 'field_s_opp_id',
+    'field_s_opp_duration' => 'field_s_opp_duration',
+    'field_s_opp_location' => 'field_s_opp_location',
   );
 
   /* Display: Page */
