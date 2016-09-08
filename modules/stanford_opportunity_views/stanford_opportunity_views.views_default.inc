@@ -52,6 +52,17 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No opportunities items listed.';
   $handler->display->display_options['empty']['area']['format'] = 'content_editor_text_format';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_s_opp_image']['id'] = 'field_s_opp_image';
+  $handler->display->display_options['fields']['field_s_opp_image']['table'] = 'field_data_field_s_opp_image';
+  $handler->display->display_options['fields']['field_s_opp_image']['field'] = 'field_s_opp_image';
+  $handler->display->display_options['fields']['field_s_opp_image']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_opp_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_s_opp_image']['settings'] = array(
+    'image_style' => '4-col-header',
+    'image_link' => 'content',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -64,21 +75,12 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'normal-link';
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_s_opp_image']['id'] = 'field_s_opp_image';
-  $handler->display->display_options['fields']['field_s_opp_image']['table'] = 'field_data_field_s_opp_image';
-  $handler->display->display_options['fields']['field_s_opp_image']['field'] = 'field_s_opp_image';
-  $handler->display->display_options['fields']['field_s_opp_image']['label'] = '';
-  $handler->display->display_options['fields']['field_s_opp_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_s_opp_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_s_opp_image']['settings'] = array(
-    'image_style' => '4-col-header',
-    'image_link' => 'content',
-  );
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Duration */
   $handler->display->display_options['fields']['field_s_opp_duration']['id'] = 'field_s_opp_duration';
   $handler->display->display_options['fields']['field_s_opp_duration']['table'] = 'field_data_field_s_opp_duration';
   $handler->display->display_options['fields']['field_s_opp_duration']['field'] = 'field_s_opp_duration';
+  $handler->display->display_options['fields']['field_s_opp_duration']['ui_name'] = 'Content: Duration';
   $handler->display->display_options['fields']['field_s_opp_duration']['label'] = '';
   $handler->display->display_options['fields']['field_s_opp_duration']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_s_opp_duration']['element_label_type'] = 'div';
@@ -87,7 +89,7 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['fields']['field_s_opp_duration']['element_wrapper_class'] = 'descriptor';
   $handler->display->display_options['fields']['field_s_opp_duration']['settings'] = array(
     'format_type' => 'stanford_month_date_year',
-    'fromto' => 'value',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -98,11 +100,13 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['fields']['field_s_opp_location']['table'] = 'field_data_field_s_opp_location';
   $handler->display->display_options['fields']['field_s_opp_location']['field'] = 'field_s_opp_location';
   $handler->display->display_options['fields']['field_s_opp_location']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_location']['alter']['text'] = '[field_s_opp_location] | ';
   $handler->display->display_options['fields']['field_s_opp_location']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_s_opp_location']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_s_opp_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_s_opp_location']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_s_opp_location']['element_wrapper_class'] = 'descriptor';
+  $handler->display->display_options['fields']['field_s_opp_location']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_s_opp_location']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_s_opp_location']['delta_offset'] = '0';
   /* Field: Content: Edit link */
