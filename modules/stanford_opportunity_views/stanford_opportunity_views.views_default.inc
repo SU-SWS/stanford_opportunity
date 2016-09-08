@@ -23,6 +23,7 @@ function stanford_opportunity_views_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Opportunities';
+  $handler->display->display_options['display_comment'] = 'CJW';
   $handler->display->display_options['css_class'] = 'views-grid-three';
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'See more opportunities';
@@ -132,9 +133,13 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -270,9 +275,16 @@ function stanford_opportunity_views_views_default_views() {
     'stanford_opportunity' => 'stanford_opportunity',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'grid_3_page');
+  /* Display: Page grid three */
+  $handler = $view->new_display('page', 'Page grid three', 'grid_3_page');
   $handler->display->display_options['display_comment'] = 'CJW';
+  $handler->display->display_options['path'] = 'opportunities/grid-three';
+
+  /* Display: Page grid two */
+  $handler = $view->new_display('page', 'Page grid two', 'page_grid_two');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'views-grid-two';
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'opportunities';
   $export['stanford_opportunity_grid'] = $view;
 
