@@ -44,7 +44,7 @@ function stanford_opportunity_importer_feeds_importer_default() {
           'xpathparser:8' => 'DURATION/END',
           'xpathparser:9' => 'SPONSOR',
           'xpathparser:10' => 'INTRO',
-          'xpathparser:12' => 'BULLET_POINTS',
+          'xpathparser:12' => 'BULLET_POINTS/BULLET',
           'xpathparser:13' => 'DESCRIPTION',
           'xpathparser:14' => 'IMAGE',
           'xpathparser:34' => 'ELIGIBILITY',
@@ -202,8 +202,8 @@ function stanford_opportunity_importer_feeds_importer_default() {
           10 => array(
             'source' => 'xpathparser:9',
             'target' => 'field_s_opp_sponsor',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           11 => array(
             'source' => 'xpathparser:10',
@@ -238,14 +238,14 @@ function stanford_opportunity_importer_feeds_importer_default() {
           16 => array(
             'source' => 'xpathparser:16',
             'target' => 'field_s_opp_type',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           17 => array(
             'source' => 'xpathparser:17',
             'target' => 'field_s_opp_time_of_year',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           18 => array(
             'source' => 'xpathparser:18',
@@ -262,20 +262,20 @@ function stanford_opportunity_importer_feeds_importer_default() {
           20 => array(
             'source' => 'xpathparser:20',
             'target' => 'field_s_opp_open_to',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           21 => array(
             'source' => 'xpathparser:21',
             'target' => 'field_s_opp_location',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           22 => array(
             'source' => 'xpathparser:22',
             'target' => 'field_s_opp_city_cities',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           23 => array(
             'source' => 'xpathparser:23',
