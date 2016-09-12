@@ -53,22 +53,45 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No opportunities items listed.';
   $handler->display->display_options['empty']['area']['format'] = 'content_editor_text_format';
+  /* Relationship: Feeds item: Owner feed */
+  $handler->display->display_options['relationships']['feed_nid']['id'] = 'feed_nid';
+  $handler->display->display_options['relationships']['feed_nid']['table'] = 'feeds_item';
+  $handler->display->display_options['relationships']['feed_nid']['field'] = 'feed_nid';
+  /* Field: Content: ID */
+  $handler->display->display_options['fields']['field_s_opp_id']['id'] = 'field_s_opp_id';
+  $handler->display->display_options['fields']['field_s_opp_id']['table'] = 'field_data_field_s_opp_id';
+  $handler->display->display_options['fields']['field_s_opp_id']['field'] = 'field_s_opp_id';
+  $handler->display->display_options['fields']['field_s_opp_id']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_s_opp_id']['element_label_colon'] = FALSE;
+  /* Field: Content: Site URL */
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['id'] = 'field_s_opp_importer_site_url';
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['table'] = 'field_data_field_s_opp_importer_site_url';
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['field'] = 'field_s_opp_importer_site_url';
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['relationship'] = 'feed_nid';
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_s_opp_importer_site_url']['type'] = 'link_plain';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_s_opp_image']['id'] = 'field_s_opp_image';
   $handler->display->display_options['fields']['field_s_opp_image']['table'] = 'field_data_field_s_opp_image';
   $handler->display->display_options['fields']['field_s_opp_image']['field'] = 'field_s_opp_image';
   $handler->display->display_options['fields']['field_s_opp_image']['label'] = '';
+  $handler->display->display_options['fields']['field_s_opp_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_s_opp_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_s_opp_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_s_opp_image']['settings'] = array(
     'image_style' => '4-col-header',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
@@ -77,6 +100,16 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'normal-link';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Global: Image and title link */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Image and title link';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[field_s_opp_importer_site_url]/node/[field_s_opp_id]">[field_s_opp_image]</a>
+<h3 class="opp_title"><a href="[field_s_opp_importer_site_url]/node/[field_s_opp_id]">[title]</a></h3>
+';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Duration */
   $handler->display->display_options['fields']['field_s_opp_duration']['id'] = 'field_s_opp_duration';
   $handler->display->display_options['fields']['field_s_opp_duration']['table'] = 'field_data_field_s_opp_duration';

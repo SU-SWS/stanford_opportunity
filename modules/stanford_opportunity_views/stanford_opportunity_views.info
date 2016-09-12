@@ -6,6 +6,7 @@ version = 7.x-1.0-dev
 project = stanford_opportunity_views
 dependencies[] = ctools
 dependencies[] = stanford_opportunity
+dependencies[] = stanford_opportunity_importer
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
