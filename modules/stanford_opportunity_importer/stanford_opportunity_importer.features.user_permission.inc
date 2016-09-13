@@ -17,6 +17,41 @@ function stanford_opportunity_importer_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'create stanford_opportunity_importer content'.
+  $permissions['create stanford_opportunity_importer content'] = array(
+    'name' => 'create stanford_opportunity_importer content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any stanford_opportunity_importer content'.
+  $permissions['delete any stanford_opportunity_importer content'] = array(
+    'name' => 'delete any stanford_opportunity_importer content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own stanford_opportunity_importer content'.
+  $permissions['delete own stanford_opportunity_importer content'] = array(
+    'name' => 'delete own stanford_opportunity_importer content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any stanford_opportunity_importer content'.
+  $permissions['edit any stanford_opportunity_importer content'] = array(
+    'name' => 'edit any stanford_opportunity_importer content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own stanford_opportunity_importer content'.
+  $permissions['edit own stanford_opportunity_importer content'] = array(
+    'name' => 'edit own stanford_opportunity_importer content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'import stanford_opportunity_helper feeds'.
   $permissions['import stanford_opportunity_helper feeds'] = array(
     'name' => 'import stanford_opportunity_helper feeds',
