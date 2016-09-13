@@ -1,13 +1,20 @@
-
-.view-stanford-opportunity-grid.views-grid-two .views-row {
-    box-sizing: border-box;
-    display: inline-block;
-    margin-right: 3%;
-    margin-bottom: 20px;
-    width: 48%;
-    vertical-align: top;
+@media (max-width: 355px) {
+    .view-stanford-opportunity-grid.views-grid-two .views-row {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
+@media (min-width: 355px) {
+    .view-stanford-opportunity-grid.views-grid-two .views-row {
+        box-sizing: border-box;
+        display: inline-block;
+        margin-right: 3%;
+        margin-bottom: 20px;
+        width: 48%;
+        vertical-align: top;
+    }
+}
 .view-stanford-opportunity-grid.views-grid-two .views-row.views-row-2,
 .view-stanford-opportunity-grid.views-grid-two .views-row.views-row-4,
 .view-stanford-opportunity-grid.views-grid-two .views-row.views-row-6,
