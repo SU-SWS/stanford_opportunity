@@ -319,6 +319,259 @@ function stanford_opportunity_views_views_default_views() {
   $handler->display->display_options['css_class'] = 'views-grid-two';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'opportunities';
+
+  /* Display: Page grid three filtered */
+  $handler = $view->new_display('page', 'Page grid three filtered', 'page_grid_3_filtered');
+  $handler->display->display_options['display_comment'] = 'CJW';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Opportunity Type (field_s_opp_type) */
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['id'] = 'field_s_opp_type_tid';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['table'] = 'field_data_field_s_opp_type';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['field'] = 'field_s_opp_type_tid';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['title'] = '%1';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate_options']['vocabularies'] = array(
+    'stanford_opp_type' => 'stanford_opp_type',
+  );
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stanford_opportunity' => 'stanford_opportunity',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Location (field_s_opp_location) */
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['id'] = 'field_s_opp_location_tid';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['table'] = 'field_data_field_s_opp_location';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['field'] = 'field_s_opp_location_tid';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['operator_id'] = 'field_s_opp_location_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['label'] = 'Location ';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['operator'] = 'field_s_opp_location_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['identifier'] = 'field_s_opp_location_tid';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['vocabulary'] = 'stanford_opp_location';
+  /* Filter criterion: Content: Major (field_s_opp_major) */
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['id'] = 'field_s_opp_major_tid';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['table'] = 'field_data_field_s_opp_major';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['field'] = 'field_s_opp_major_tid';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['operator_id'] = 'field_s_opp_major_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['label'] = 'Major';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['operator'] = 'field_s_opp_major_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['identifier'] = 'field_s_opp_major_tid';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['vocabulary'] = 'stanford_opp_major';
+  /* Filter criterion: Content: Open To (field_s_opp_open_to) */
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['id'] = 'field_s_opp_open_to_tid';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['table'] = 'field_data_field_s_opp_open_to';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['field'] = 'field_s_opp_open_to_tid';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['operator_id'] = 'field_s_opp_open_to_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['label'] = 'Open To';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['operator'] = 'field_s_opp_open_to_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['identifier'] = 'field_s_opp_open_to_tid';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['vocabulary'] = 'stanford_opp_open_to';
+  /* Filter criterion: Content: Time of Year (field_s_opp_time_of_year) */
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['id'] = 'field_s_opp_time_of_year_tid';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['table'] = 'field_data_field_s_opp_time_of_year';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['field'] = 'field_s_opp_time_of_year_tid';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['operator_id'] = 'field_s_opp_time_of_year_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['label'] = 'Time of Year ';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['operator'] = 'field_s_opp_time_of_year_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['identifier'] = 'field_s_opp_time_of_year_tid';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['vocabulary'] = 'stanford_opp_time_of_year';
+  $handler->display->display_options['path'] = 'opportunities/filtered/grid-three';
+
+  /* Display: Page grid two filtered */
+  $handler = $view->new_display('page', 'Page grid two filtered', 'page_grid_2_filtered');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'views-grid-two';
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Opportunity Type (field_s_opp_type) */
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['id'] = 'field_s_opp_type_tid';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['table'] = 'field_data_field_s_opp_type';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['field'] = 'field_s_opp_type_tid';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['title'] = '%1';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate_options']['vocabularies'] = array(
+    'stanford_opp_type' => 'stanford_opp_type',
+  );
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['field_s_opp_type_tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stanford_opportunity' => 'stanford_opportunity',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Location (field_s_opp_location) */
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['id'] = 'field_s_opp_location_tid';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['table'] = 'field_data_field_s_opp_location';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['field'] = 'field_s_opp_location_tid';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['operator_id'] = 'field_s_opp_location_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['label'] = 'Location ';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['operator'] = 'field_s_opp_location_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['identifier'] = 'field_s_opp_location_tid';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_location_tid']['vocabulary'] = 'stanford_opp_location';
+  /* Filter criterion: Content: Major (field_s_opp_major) */
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['id'] = 'field_s_opp_major_tid';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['table'] = 'field_data_field_s_opp_major';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['field'] = 'field_s_opp_major_tid';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['operator_id'] = 'field_s_opp_major_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['label'] = 'Major';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['operator'] = 'field_s_opp_major_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['identifier'] = 'field_s_opp_major_tid';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_major_tid']['vocabulary'] = 'stanford_opp_major';
+  /* Filter criterion: Content: Open To (field_s_opp_open_to) */
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['id'] = 'field_s_opp_open_to_tid';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['table'] = 'field_data_field_s_opp_open_to';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['field'] = 'field_s_opp_open_to_tid';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['operator_id'] = 'field_s_opp_open_to_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['label'] = 'Open To';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['operator'] = 'field_s_opp_open_to_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['identifier'] = 'field_s_opp_open_to_tid';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_open_to_tid']['vocabulary'] = 'stanford_opp_open_to';
+  /* Filter criterion: Content: Time of Year (field_s_opp_time_of_year) */
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['id'] = 'field_s_opp_time_of_year_tid';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['table'] = 'field_data_field_s_opp_time_of_year';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['field'] = 'field_s_opp_time_of_year_tid';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['operator_id'] = 'field_s_opp_time_of_year_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['label'] = 'Time of Year ';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['operator'] = 'field_s_opp_time_of_year_tid_op';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['identifier'] = 'field_s_opp_time_of_year_tid';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['vocabulary'] = 'stanford_opp_time_of_year';
+  $handler->display->display_options['path'] = 'opportunities/filtered/grid-two/%';
   $export['stanford_opportunity_grid'] = $view;
 
   return $export;
