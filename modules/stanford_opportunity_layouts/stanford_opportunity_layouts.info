@@ -6,6 +6,7 @@ version = 7.x-1.0-dev
 project = stanford_opportunity_layouts
 dependencies[] = context
 dependencies[] = stanford_opportunity
+dependencies[] = stanford_opportunity_views
 dependencies[] = views
 features[context][] = opportunities_landing_page
 features[ctools][] = context:context:3
