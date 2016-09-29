@@ -14,7 +14,7 @@ function stanford_opportunity_importer_user_default_permissions() {
   $permissions['clear stanford_opportunity_helper feeds'] = array(
     'name' => 'clear stanford_opportunity_helper feeds',
     'roles' => array(),
-    'module' => 'feeds',
+    'module' => 'stanford_opportunity_importer',
   );
 
   // Exported permission: 'create stanford_opportunity_importer content'.
@@ -56,21 +56,21 @@ function stanford_opportunity_importer_user_default_permissions() {
   $permissions['import stanford_opportunity_helper feeds'] = array(
     'name' => 'import stanford_opportunity_helper feeds',
     'roles' => array(),
-    'module' => 'feeds',
+    'module' => 'stanford_opportunity_importer',
   );
 
   // Exported permission: 'tamper stanford_opportunity_helper'.
   $permissions['tamper stanford_opportunity_helper'] = array(
     'name' => 'tamper stanford_opportunity_helper',
     'roles' => array(),
-    'module' => 'feeds_tamper',
+    'module' => 'stanford_opportunity_importer',
   );
 
   // Exported permission: 'unlock stanford_opportunity_helper feeds'.
   $permissions['unlock stanford_opportunity_helper feeds'] = array(
     'name' => 'unlock stanford_opportunity_helper feeds',
     'roles' => array(),
-    'module' => 'feeds',
+    'module' => 'stanford_opportunity_importer',
   );
 
   return $permissions;
