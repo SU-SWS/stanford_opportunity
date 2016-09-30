@@ -91,7 +91,7 @@ function stanford_opportunity_administration_views_default_views() {
     ),
     'nothing' => array(
       'align' => '',
-      'separator' => '',
+      'separator' => ' | ',
       'empty_column' => 0,
     ),
     'field_s_opp_id' => array(
@@ -232,10 +232,9 @@ function stanford_opportunity_administration_views_default_views() {
   $handler->display->display_options['fields']['field_s_opp_duration']['id'] = 'field_s_opp_duration';
   $handler->display->display_options['fields']['field_s_opp_duration']['table'] = 'field_data_field_s_opp_duration';
   $handler->display->display_options['fields']['field_s_opp_duration']['field'] = 'field_s_opp_duration';
-  $handler->display->display_options['fields']['field_s_opp_duration']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_s_opp_duration']['alter']['text'] = ' | Start: [field_s_opp_duration-value]';
   $handler->display->display_options['fields']['field_s_opp_duration']['settings'] = array(
-    'format_type' => 'stanford_month_date_year',
+    'format_type' => 'short',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
