@@ -60,7 +60,7 @@ function stanford_opportunity_importer_field_default_field_instances() {
     'bundle' => 'stanford_opportunity_importer',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This identifies the base URL for the imported opportunity nodes. It is used when linking a node from this site to a node the source site.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -116,6 +116,7 @@ function stanford_opportunity_importer_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Site URL');
+  t('This identifies the base URL for the imported opportunity nodes. It is used when linking a node from this site to a node the source site.');
 
   return $field_instances;
 }
