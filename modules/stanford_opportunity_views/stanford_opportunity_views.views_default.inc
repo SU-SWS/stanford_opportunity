@@ -443,7 +443,7 @@ function stanford_opportunity_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_s_opp_time_of_year_tid']['vocabulary'] = 'stanford_opp_time_of_year';
-  $handler->display->display_options['path'] = 'opportunities/filtered/grid-three';
+  $handler->display->display_options['path'] = 'opportunities/filtered/grid-three/%';
 
   /* Display: Page grid two filtered */
   $handler = $view->new_display('page', 'Page grid two filtered', 'page_grid_2_filtered');
