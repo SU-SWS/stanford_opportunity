@@ -316,7 +316,7 @@ function stanford_opportunity_importer_feeds_importer_default() {
         ),
         'insert_new' => '1',
         'update_existing' => '2',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'filtered_html',
         'skip_hash_check' => 0,
         'bundle' => 'stanford_opportunity',
