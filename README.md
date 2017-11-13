@@ -1,5 +1,5 @@
 # [Stanford Opportunity](https://github.com/SU-SWS/stanford_opportunity)
-##### Version: 7.x-1.x
+##### Version: 7.x-1.0-alpha1
 
 Maintainers: [cjwest](https://github.com/cjwest), [boznik](https://github.com/boznik)
 [Changelog.txt](CHANGELOG.txt)
